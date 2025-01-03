@@ -16,3 +16,9 @@ __pycache__
 /test
 
 /.vscode
+/.venv
+
+/external/zephyr
+/external/modules
+/external/bootloader
+/external/tools

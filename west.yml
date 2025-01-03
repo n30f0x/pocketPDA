@@ -1,0 +1,25 @@
+manifest:
+  self:
+    west-commands: scripts/west-commands.yml
+
+  projects:
+    - name: hal_espressif # sdk-espressif
+      path: espidf
+      import:
+        name-blocklist:
+          - ci-tools
+          - hal_altera
+          - hal_cypress
+          - hal_infineon
+          - hal_microchip
+          - hal_nxp
+          - hal_openisa
+          - hal_silabs
+          - hal_nrf
+          - hal_ti
+          - loramac-node
+          - net-tools
+          - edtt
+          - trusted-firmware-m
+          - sof
+      clone-depth: 1

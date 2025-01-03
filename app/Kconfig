@@ -17,12 +17,12 @@ menu "ZSWatch"
         config APPLICATIONS_USE_ACCELEROMETER
             bool
         prompt "Activate the application 'Accelerometer'"
-        default y
+        default n
 
         config APPLICATIONS_USE_COMPASS
             bool
         prompt "Activate the application 'Compass'"
-        default y
+        default n
 
         config APPLICATIONS_USE_INFO
             bool
@@ -42,7 +42,7 @@ menu "ZSWatch"
         config APPLICATIONS_USE_X_RAY
             bool
         prompt "Activate the application 'X-Ray'"
-        default y if LV_Z_USE_FILESYSTEM
+        default n
 
         config APPLICATIONS_USE_ZDS
             bool
@@ -192,32 +192,8 @@ menu "ZSWatch"
         endif
     endmenu
 
-    menu "Sensor Fusion"
-        config SENSOR_FUSION_INCLUDE_MAGNETOMETER
-            bool
-        prompt "Include Magnetometer reading in sensor fusion algorithm"
-        default y
-        help
-            "If the magnetometer is not well calibrated, you must disable this option."
-
-        config SEND_SENSOR_READING_OVER_RTT
-            bool
-        prompt "Log sensor fusion reading to RTT"
-        default 1
-        help
-            "Python script can be used to read, analyze the RTT channel and plot the sensor fusion reading."
-
-        if SEND_SENSOR_READING_OVER_RTT
-            config SENSOR_LOG_RTT_TRANSFER_CHANNEL
-                int
-            prompt "The RTT channel to use for transfer of sensor fusion reading"
-            default 1
-            help
-                "If RTT logging is enabled"
-        endif
-    endmenu
-
     menu "Misc"
+<<<<<<< Updated upstream
         config MISC_ENABLE_SYSTEM_RESET
             bool
         prompt "Enable a system reset via button 3"
@@ -228,6 +204,8 @@ menu "ZSWatch"
         range 10 65535
         prompt "The maximum history length in samples"
         default 672
+=======
+>>>>>>> Stashed changes
     endmenu
 
     menu "Custom drivers"
